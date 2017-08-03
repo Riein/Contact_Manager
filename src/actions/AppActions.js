@@ -3,7 +3,7 @@ import AppConstants from '../constants/AppConstants';
 import ContactsAPI from '../utils/ContactsAPI';
 
 export default {
-  receiveContacts: () => {
+  recieveContacts: () => {
     ContactsAPI
     .getContacts('https://jsonplaceholder.typicode.com/users')
     .then(contacts => {
