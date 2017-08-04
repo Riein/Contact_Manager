@@ -18,7 +18,19 @@ class AddContact extends Component {
     if(this.refs.name.value === '') {
       alert("Name is required");
     } else {
+      this.setState({
+        newContact: {
+          name: this.refs.name.value,
+          email: this.refs.email.value,
+          phone: this.refs.phone.value
+        }
+      }, function() {
+        AppActions.saveContact(this.state.newContact);
+      });
 
+      this.refs.name.value = '';
+      this.refs.email.value = '';
+      this.refs.phone.value = '';
     }
 
     event.preventDefault();
